@@ -7,6 +7,7 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import date
 
 
 ###
@@ -22,19 +23,29 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Lord Reginald")
 
 
 ###
 # The functions below should be applicable to all Flask apps.
 ###
 
+@app.route('/profile')
+def profile():
+    my_name = 'Lord Reginald'
+    email = 'lord_reginald@gmail.com'
+    res = 'Portland, Jamaica'
+    story = 'One day I hope to achieve both small and great things such as a stable financial income and to a further extent provide perfor real estate investments in order to improve Jamaica welbeing in the long run'
+    post = 'Alot'
+    following = 'Alot'
+    followers = 'Alot'
+    return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), followers = followers, post = post, following = following)
+
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
-
 
 @app.after_request
 def add_header(response):
@@ -53,6 +64,9 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
+def getDate():
+    today = date.today().strftime('%m/%Y')
+    print("Joined -", today)
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="8080")

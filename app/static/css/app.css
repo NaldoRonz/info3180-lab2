@@ -13,7 +13,7 @@ body {
 
 .lowerContainer{
   background-color: white;
-  height: 301px;
+  height: 501px;
   width: auto;
   padding-left: 20%;
 }
@@ -21,32 +21,32 @@ body {
 .viewBox1{
   background-color: #191970;
   height: 300px;
-  width: 75%;
+  width: 50%;
   border: 2px;
   border-style: solid;
   border-color: blue;
 }
 
 .viewBox2{
-  background-color: #F5FFFA;
+  background-color: #9370DB;
   height: 100px;
-  width: 75%;
+  width: 50%;
   border: .5px;
 }
 
-.viewBox21{
-  background-color: #F5FFFA;
-  height: 100px;
-  width: 75%;
-  flex-direction: column;
-  flex-basis: 100%;
-  color: #191970
+.viewBox21{  /*Post, Follwers and Following super class*/
+  background-color: #9370DB;
+  height: 200px;
+  width: 50%;
+  color: #191970;
+  padding-top: 2.5%;
+
 }
 
 .viewBox22{
-  background-color: #F5FFFA;
+  background-color: #9370DB;
   height: 100px;
-  width: 75%;
+  width: 50%;
 }
 
  h1.name{
@@ -61,6 +61,7 @@ body {
  p.info{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  color: white;
   padding-top: 2%;
   margin-right: 10%;
   margin-left: 10%;
@@ -68,10 +69,14 @@ body {
  }
 
 img{
-  height: 175px;
-  width: 65%;
-  padding-left: 35%;
-  padding-top: 2%;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 125px;
+  width: 125px;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 h2{
@@ -89,6 +94,15 @@ h2{
   padding: 5px 10px;
   text-align: center;
   font-size: 15px;
-  margin-left: 50%;
+  margin-left: 80%;
   margin-top: 5%;
+}
+
+table,th,td{
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
 }

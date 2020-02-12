@@ -15,10 +15,18 @@
         <p class ="info">{{ story }}</p>
        </div>
     <div class ="viewBox21">
-      <div>{{ post }}</div>
-      <div>{{ following }}</div>
-      <div>{{ followers }}</div>
-      </div>
+      <table style = "width: 75%">
+        <tr>
+          <th>{{Post}}</th>
+          <th>{{Followers}}</th>
+          <th>{{Following}}</th>
+         </tr>
+          <tr>
+           <td>{{Post_num}}</td>
+           <td>{{Followers_num}}</td>
+           <td>{{Following_num}}</td>
+             </tr>
+        </table>
       <div class ="viewBox22">
         <input type="button" class="button" value="Follow">
         </div>
@@ -26,5 +34,8 @@
 {% endblock%}
 
 {% block css %}
-   <link rel = "stylesheet" href = "{{ url_for ('static', filename = 'css/app.css') }}" />
+   <link rel = "stylesheet" href = "{{ url_for ('static', filename = 'css/app.css')}}" />
+
+   <script src = "/scripts/jquery.min.js"></script>
+   <script src = "/bootstrap/js/bootstrap.min.js"></script>
 {% endblock%}

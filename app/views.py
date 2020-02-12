@@ -36,10 +36,13 @@ def profile():
     email = 'lord_reginald@gmail.com'
     res = 'Portland, Jamaica'
     story = 'One day I hope to achieve both small and great things such as a stable financial income and to a further extent provide perfor real estate investments in order to improve Jamaica welbeing in the long run'
-    post = 'Alot'
-    following = 'Alot'
-    followers = 'Alot'
-    return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), followers = followers, post = post, following = following)
+    Post = 'Post'
+    Following = 'Following'
+    Followers = 'Followers'
+    Post_num = '21'
+    Followers_num = '210'
+    Following_num = '21'
+    return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), Post_num = Post_num, Following_num = Following_num, Followers_num = Followers_num, Post = Post, Followers = Followers, Following = Following)
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):

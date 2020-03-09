@@ -1,26 +1,21 @@
 /*620109753 R.Reid*/
 
 .navbar-custom{
-  background-color: #000080;
+  background-color: #000080; /*Navy*/
 }
 
 .navbar-brand{
-  color: #F5FFFA;
+  color: #F5FFFA; /*Mint Cream*/
   font-weight: bold;
 }
 
 .nav-link{
-  color: #F5FFFA;
+  color: #F5FFFA; /*Mint Cream*/
   font-weight: bolder;
 }
 
-.navbar-toggler-icon{
-  background-color: #F5FFFA;
-  color: black;
-}
-
 .nav-item{
- border-right: 1px solid #F5FFFA;
+ border-right: 1px solid #F5FFFA; /*Mint Cream*/
 }
 
 .nav-item:last-child{
@@ -42,9 +37,19 @@
   height: auto;
 }
 
-.profile_img{
+.profile_icon_img{
   width: 25px;
   height: auto;
+}
+
+a:hover{
+  color: #FFD700; /*Gold*/
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #F5FFFA; /*Mint Cream*/
+  background-color: #F5FFFA; /*Mint Cream*/;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='-4 1 42 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /*Project changes are listed above*/

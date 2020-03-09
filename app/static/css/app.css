@@ -1,5 +1,54 @@
 /*620109753 R.Reid*/
 
+.navbar-custom{
+  background-color: #000080;
+}
+
+.navbar-brand{
+  color: #F5FFFA;
+  font-weight: bold;
+}
+
+.nav-link{
+  color: #F5FFFA;
+  font-weight: bolder;
+}
+
+.navbar-toggler-icon{
+  background-color: #F5FFFA;
+  color: black;
+}
+
+.nav-item{
+ border-right: 1px solid #F5FFFA;
+}
+
+.nav-item:last-child{
+ border-right: none;
+}
+
+.home_img{
+  width: 25px;
+  height: auto;
+}
+
+.about_img{
+  width: 25px;
+  height: auto;
+}
+
+.profiles_img{
+  width: 25px;
+  height: auto;
+}
+
+.profile_img{
+  width: 25px;
+  height: auto;
+}
+
+/*Project changes are listed above*/
+
 body {
     padding-top: 5rem;
 }
@@ -68,7 +117,7 @@ body {
   color: #191970;
  }
 
-img{
+.profile_img{
   display: block;
   margin-top: 20px;
   margin-left: auto;

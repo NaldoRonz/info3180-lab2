@@ -30,11 +30,13 @@ def profile():
         Gender = form.Gender.data
         Email = form.Email.data
         Location = form.Location.data
+        Biography = form.Biography.data
         Photo = form.Browse.data
         filename = secure_filename(Photo.filename)
         Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+
         flash("Successfully Completed")
-        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, filename = filename)
+        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography, filename = filename)
     else:
         flash_errors(form)
         return render_template('profile.html', form = form)

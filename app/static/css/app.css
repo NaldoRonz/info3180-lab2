@@ -14,14 +14,14 @@
   font-weight: bolder;
 }
 
-.nav-item{
+/*.nav-item{
  border-right: 1px solid #F5FFFA; /*Mint Cream*/
-}
+/*}
 
 .nav-item:last-child{
  border-right: none;
 }
-
+*/
 .home_img{
   width: 25px;
   height: auto;
@@ -49,10 +49,24 @@ a:hover{
 .custom-toggler.navbar-toggler {
   border-color: #F5FFFA; /*Mint Cream*/
   background-color: #F5FFFA; /*Mint Cream*/;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='-4 1 42 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='-5 1 42 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/*Project changes are listed above*/
+/*Navbar CSS above*/
+
+.form_container{
+  border-style: solid;
+  border-color: #E6E6FA; /*Lavender*/
+}
+
+.add_form{
+  font-size: 18px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-family: Georgia, serif;
+}
 
 body {
     padding-top: 5rem;

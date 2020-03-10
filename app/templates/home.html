@@ -1,29 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<form action = " " method = "post" >
-  {% include 'flash_msg.html' %}
-  {{form.csrf_token }}
-  <h1> {{form_name}} </h1>
-  <div class = "myForm">
-    <h3> {{firstname}} </h3>
-    <h3> {{form.Firstname.label}} {{required}}</h3> {{form.Firstname}}
-  </div>
-  </br>
-  <div class = "myForm">
-    <h3> {{lastname}} </h3>
-    <h3> {{form.Lastname.label}} {{required}}</h3> {{form.Lastname}}
-  </div>
-  </br>
-  <div class = "myForm">
-    <h3> {{gender}} </h3>
-    <h3> {{form.Gender.label}} {{required}}</h3> {{form.Gender}}
-  </div>
-  <div class = "myForm">
-    <h3> {{email}} </h3>
-    <h3> {{form.Email.label}} {{required}}</h3> {{form.Email(placeholder = example_mail)}}
-  </div>
-  </br>
-      </br>
-  </form>
+<h1>Flask Starter Code</h1>
+<p class="lead">Use this starter template for your Flask apps as a way to quickly start any new project.<br>
+All you get are these files and mostly barebones HTML/CSS files.</p>
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class = "upperContainer">
+  <div class ="viewBox1">
+    <img src = "{{url_for('static', filename = 'profile_pic.webp')}}" class = "profile_img">
+    <h1 class = "name">{{ my_name }}</h1>
+    <h2>{{ email }}</h2>
+    <h2>{{ res }}</h2>
+    <h2>{{ getDate }}</h2>
+    </div>
+  </div>
+   <div class = "lowerContainer">
+     <div class ="viewBox2">
+        <p class ="info">{{ story }}</p>
+       </div>
+    <div class ="viewBox21">
+      <table style = "width: 75%">
+        <tr>
+          <th>{{Post}}</th>
+          <th>{{Followers}}</th>
+          <th>{{Following}}</th>
+         </tr>
+          <tr>
+           <td>{{Post_num}}</td>
+           <td>{{Followers_num}}</td>
+           <td>{{Following_num}}</td>
+             </tr>
+        </table>
+      <div class ="viewBox22">
+        <input type="button" class="button" value="Follow">
+        </div>
+    </div>
+{% endblock%}
+
+{% block css %}
+   <link rel = "stylesheet" href = "{{ url_for ('static', filename = 'css/app.css')}}" />
+
+   <script src = "/scripts/jquery.min.js"></script>
+   <script src = "/bootstrap/js/bootstrap.min.js"></script>
+{% endblock%}

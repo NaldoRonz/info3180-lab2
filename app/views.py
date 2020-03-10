@@ -16,30 +16,38 @@ from datetime import date
 # Routing for your application.
 ###
 
-@app.route('/home', methods = ["GET, POST"])
-def home():
-    """Render website's home page."""
-    form = add_Profile()
-    form_name = "Add Profile"
-    firstname = "First Name"
-    lastname = "Last Name"
-    gender = "Gender"
-    email = "Email"
-    example_mail = "e.g. naldoreginald@example.com"
-    location = "Location"
-    Firstname = form.Firstname.data
-    Lastname = form.Lastname.data
-    Gender = form.Gender.data
-    Email = form.Email.data
-    Location = form.Location.data
-    if request.method == "POST" and form.validate():
-        flash("Successfully Completed")
-    return render_template('home.html', form_name = form_name, firstname = firstname, lastname = lastname, Firstname = Firstname, Lastname = Lastname, gender =gender, email = email, loaction = location, Gender = Gender, Email = Email, Location = Location)
-
-app.route('/')
+@app.route('/')
 def home():
     """Render website's home page."""
     return render_template('home.html')
+
+@app.route('/profile', methods = ["GET", "POST"])
+def profile():
+    form = add_Profile()
+    if request.method == "POST" and form.validate_on_submit():
+        Firstname = form.Firstname.data
+        Lastname = form.Lastname.data
+        Gender = form.Gender.data
+        Email = form.Email.data
+        Location = form.Location.data
+        Photo = form.Browse.data
+        filename = secure_filename(Photo.filename)
+        Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        flash("Successfully Completed")
+        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, filename = filename)
+    else:
+        flash_errors(form)
+        return render_template('profile.html', form = form)
+
+# Flash errors from the form if validation fails
+def flash_errors(form):
+    for field, errors in form.errors.items():
+        for error in errors:
+            flash(u"Error in the %s field - %s" % (
+                getattr(form, field).label.text,
+                error
+            ), 'danger')
+
 
 @app.route('/about/')
 def about():
@@ -50,21 +58,6 @@ def about():
 ###
 # The functions below should be applicable to all Flask apps.
 ###
-
-
-@app.route('/profile')
-def profile():
-    my_name = 'Lord Reginald'
-    email = 'lord_reginald@gmail.com'
-    res = 'Portland, Jamaica'
-    story = 'One day I hope to achieve both small and great things such as a stable financial income and to a further extent provide perfor real estate investments in order to improve Jamaica welbeing in the long run'
-    Post = 'Post'
-    Following = 'Following'
-    Followers = 'Followers'
-    Post_num = '21'
-    Followers_num = '210'
-    Following_num = '21'
-    return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), Post_num = Post_num, Following_num = Following_num, Followers_num = Followers_num, Post = Post, Followers = Followers, Following = Following)
 
 @app.route('/profiles')
 def profiles():
@@ -79,7 +72,7 @@ def profiles():
     Followers_num = '210'
     Following_num = '21'
     return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), Post_num = Post_num, Following_num = Following_num, Followers_num = Followers_num, Post = Post, Followers = Followers, Following = Following)
-    
+
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
     """Send your static text file."""

@@ -1,20 +1,34 @@
 {% extends "base.html" %}
 
 {% block main %}
-<form name = "Add Profile" action = " " class = add_Profile(form), method = "POST">
-  {% include 'flash_msg.html' %}
-  {{form.csrf_token }}
-  <div class = "form_container">
-    <div class = "add_form">
-        {{form.Firstname.label}} </br> {{form.Firstname(class = "form-control", size = 75 )}}</br>
-        {{form.Lastname.label}} </br> {{form.Lastname(class = "form-control", size = 75)}}</br>
-        {{form.Gender.label}} {{form.Gender(class = "form-control")}}</br>
-        {{form.Email.label}} </br> {{form.Email(class = "form-control", size = 75, placeholder = "e.g example@mail.com")}}</br>
-        {{form.Location.label}} </br> {{form.Location(class = "form-control", size = 75)}}</br>
-        {{form.Biography.label}} </br> {{form.Biography(class = "form-control")}}</br>
-    <p><input type = file name = Photo"></p>
-    <p><button type= "Submit" value = "Submit">Submit</button></p>
+<div class = "upperContainer">
+  <div class ="viewBox1">
+    <img src = "{{url_for('static', filename = 'profile_pic.webp')}}" class = "profile_img"/>
+    <h1 class = "name">{{ my_name }}</h1>
+    <h2>{{ email }}</h2>
+    <h2>{{ res }}</h2>
+    <h2>{{ getDate }}</h2>
     </div>
-   </div>
- </form>
-{% endblock %}
+  </div>
+   <div class = "lowerContainer">
+     <div class ="viewBox2">
+        <p class ="info">{{ story }}</p>
+       </div>
+    <div class ="viewBox21">
+      <table style = "width: 75%">
+        <tr>
+          <th>{{Post}}</th>
+          <th>{{Followers}}</th>
+          <th>{{Following}}</th>
+         </tr>
+          <tr>
+           <td>{{Post_num}}</td>
+           <td>{{Followers_num}}</td>
+           <td>{{Following_num}}</td>
+             </tr>
+        </table>
+      <div class ="viewBox22">
+        <input type="button" class="button" value="Follow">
+        </div>
+    </div>
+{% endblock%}

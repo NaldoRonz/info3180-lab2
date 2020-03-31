@@ -7,8 +7,6 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
-from werkzeug.utils import secure_filename
-from .forms import add_Profile
 from datetime import date
 
 
@@ -21,25 +19,6 @@ def home():
     """Render website's home page."""
     return render_template('home.html')
 
-@app.route('/profile', methods = ["GET", "POST"])
-def profile():
-    form = add_Profile()
-    if request.method == "POST" and form.validate_on_submit():
-        Firstname = form.Firstname.data
-        Lastname = form.Lastname.data
-        Gender = form.Gender.data
-        Email = form.Email.data
-        Location = form.Location.data
-        Biography = form.Biography.data
-        Photo = form.Browse.data
-        filename = secure_filename(Photo.filename)
-        Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-
-        flash("Successfully Completed")
-        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography, filename = filename)
-    else:
-        flash_errors(form)
-        return render_template('profile.html', form = form)
 
 # Flash errors from the form if validation fails
 def flash_errors(form):
@@ -61,8 +40,8 @@ def about():
 # The functions below should be applicable to all Flask apps.
 ###
 
-@app.route('/profiles')
-def profiles():
+@app.route('/profile')
+def profile():
     my_name = 'Lord Reginald'
     email = 'lord_reginald@gmail.com'
     res = 'Portland, Jamaica'
